@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 4</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-controller="carCtrl">
+    <table cellspacing="4px" cellpadding="5px;" rules="all">
+      <thead>
+        <th>Voiture</th>
+        <th>Couleur</th>
+      </thead>
+      <tr ng-repeat="car in cars | filter : '!verte' ">
+        <td>
+          {{car.marque}}
+        </td>
+        <td>
+          {{car.couleur}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

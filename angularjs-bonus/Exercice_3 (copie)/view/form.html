@@ -1,0 +1,20 @@
+<div ng-controller="formController">
+  <form name="form">
+    <label for="name">Nom : </label>
+    <input type="text" name="name" ng-model="name" placeholder="Dupont" ng-pattern="nameRegex" required />
+    <p ng-show="form.name.$error.pattern">le nom doit commencer par une majuscule</p>
+    <label for="email">Email : </label>
+    <input type="email" name="email" ng-model="email" placeholder="exemple@mailfr" ng-pattern="mailRegex" required />
+    <p ng-show="form.mail.$error.pattern">merci dentre une adresse valide</p>
+    <label for="subjet">Sujet du mail : </label>
+    <input type="text" name="subject" ng-model="subjet" placeholder="sujet" required />
+    <p ng-show="form.subject.$error.minlength">merci d'entre au minimun 5 caractere</p>
+    <label for="textArea">Message : </label>
+    <textarea name="textArea" ng-model="textArea" rows="8" cols="80" required></textarea>
+    <p ng-show="form.textArea.$error.minlength">meri dentre au minimun 5 caractere</p>
+    <button ng-click="sendMessage()" type="submit" name="validate">Valider</button>
+  </form>
+  <ol>
+    <li ng-repeat="message in subjectMessage"><a href="#!mailInfo"></a> sujet : {{ Message }}</li>
+  </ol>
+</div>
